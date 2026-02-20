@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Banschrift&display=swap');
+
+/* Fond Couleur */
+body {
+    background-color: #232323;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+.header {
+    position: fixed;          /* Reste fixe lors du défilement */
+    top: 0;                  /* Position en haut */
+    left: 0;                 /* À gauche */
+    right: 0;                /* À droite (toute la largeur) */
+    background-color: #232323; /* Fond noir */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    z-index: 1000;           /* Au-dessus du contenu */
+    
+    /* Organisation du contenu */
+}
+
+.header-content {
+    display: flex;           /* Conteneur flexible */
+    justify-content: space-between; /* Espace entre gauche et droite */
+    align-items: center;     /* Alignement vertical */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Style du texte */
+.header h1 {
+    color: white;
+    margin: 0;
+    font-size: 24px;
+    font-family: 'Banschrift', sans-serif;
+}
+
+/**/
+/* Style sous texte */
+.header p {
+    color: white;
+    margin: 0;
+    font-size: 14px;
+    font-family: 'Banschrift', sans-serif;
+}
+
+/* Icônes de contact dans la bannière */
+.header-icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.icon-link {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.icon-link:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header h1 {
+        font-size: 20px;
+    }
+    
+    .header p {
+        font-size: 12px;
+    }
+    
+    .header-icons {
+        justify-content: center;
+    }
+    
+    .icon-link {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 18px;
+    }
+    
+    .header p {
+        font-size: 11px;
+    }
+    
+    .icon-link {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+}
+
+/* SECTION PROFIL */
+.profil-section {
+    margin-top: 50px;        /* Espace sous la bannière */
+    padding: 60px 40px;       /* Espace intérieur */
+    display: flex;             /* Conteneur flexible */
+    align-items: center;       /* Alignement vertical */
+    gap: 30px;                 /* Espace entre image et texte */
+    max-width: 925px;         /* Largeur max */
+    margin-left: auto;         /* Centrer */
+    margin-right: auto;        /* Centrer */
+}
+
+/* Image ronde */
+.profil-image {
+    width: 200px;              /* Taille */
+    height: 200px;             /* Taille */
+    border-radius: 50%;        /* Rend l'image ronde */
+    background-color: #333;    /* Fond temporaire */
+    border: 3px solid white;    /* Bordure blanche */
+    flex-shrink: 0;            /* Empêche le rétrécissement */
+}
+
+/* Description */
+.profil-description {
+    flex: 1;                   /* Prend le reste de l'espace */
+}
+
+.profil-description p {
+    color: #ccc;               /* Gris clair */
+    font-size: 30px;
+    line-height: 1.2;           /* Espacement entre lignes */
+    font-family: 'Georgia', sans-serif;
+    margin-top: 20px;           /* Espace au-dessus */
+    margin-bottom: 30px;          /* Espace en dessous */
+    margin-left: 10px;            /* Espace à gauche */
+    margin-right: 20px;           /* Espace à droite */
+}
+
+/* SECTION PROJETS */
+.projets-section {
+    padding: 60px 40px;
+    max-width: 925px;
+    margin: 0 auto;
+}
+
+.projets-title {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-family: 'Banschrift', sans-serif;
+}
+
+/* Conteneur des projets */
+.projets-container {
+    display: grid;              /* Grille pour organiser */
+    grid-template-columns: 1fr;   /* 1 colonne par défaut */
+    gap: 30px;                 /* Espace entre projets */
+}
+
+/* Carte projet */
+.projet-card {
+    background: #111;           /* Fond sombre */
+    border: 2px solid #333;     /* Bordure */
+    padding: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Header du projet (vidéo + stats) */
+.projet-header {
+    margin-bottom: 20px;
+}
+
+/* Stats du projet */
+.projet-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.stat-item {
+    color: #E16000;
+    font-size: 12px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Rôle du projet */
+.projet-role {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.projet-card:hover {
+    border-color: #c2c2c2;      /* Bordure orange au survol */
+    transform: translateY(-5px);    /* Léger mouvement */
+}
+
+.projet-title {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-family: 'Banschrift', sans-serif;
+}
+
+.projet-desc {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.projet-button {
+    background: transparent;
+    color: #E16000;
+    border: 2px solid #E16000;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.projet-button:hover {
+    background: #E16000;
+    color: white;
+}
+
+/* SECTION COMPÉTENCES */
+.competences-section {
+    padding: 50px 50px;
+    max-width: 925px;
+    margin: 0 auto;
+}
+
+.competences-title {
+    color: white;
+    font-size: 32px;
+    margin-bottom: 40px;
+    font-family: 'Banschrift';
+}
+
+.competences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.competence-card {
+    background: #3e3e3eaa;
+    border: 2px solid #333;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.competence-card:hover {
+    border-color: #E16000;
+    transform: translateY(-3px);
+}
+
+.competence-nom {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-family: 'Banschrift', sans-serif;
+}
+
+.competence-langages {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.langage-tag {
+    display: inline-block;
+    background: #333;
+    color: white;
+    padding: 5px 10px;
+    margin: 3px;
+    border-radius: 3px;
+    font-size: 12px;
+}
