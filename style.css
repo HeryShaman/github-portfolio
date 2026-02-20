@@ -134,12 +134,21 @@ body {
 
 /* Image ronde */
 .profil-image {
-    width: 200px;              /* Taille */
-    height: 200px;             /* Taille */
+    width: 150px;              /* MODIFIEZ ICI : Taille du cercle (largeur) */
+    height: 150px;             /* MODIFIEZ ICI : Taille du cercle (hauteur) */
     border-radius: 50%;        /* Rend l'image ronde */
     background-color: #333;    /* Fond temporaire */
-    border: 3px solid white;    /* Bordure blanche */
+    border: 0px solid white;    /* Bordure blanche */
     flex-shrink: 0;            /* Empêche le rétrécissement */
+    overflow: hidden;          /* Cache le débordement de l'image */
+}
+
+/* Style pour l'image à l'intérieur du cercle */
+.profil-image img {
+    width: 100%;               /* Prend toute la largeur du conteneur */
+    height: 100%;              /* Prend toute la hauteur du conteneur */
+    object-fit: cover;         /* Couvre le conteneur sans déformer l'image */
+    object-position: center;   /* Centre l'image dans le conteneur */
 }
 
 /* Description */
@@ -181,7 +190,7 @@ body {
 
 /* Carte projet */
 .projet-card {
-    background: #111;           /* Fond sombre */
+    background: #111111d4;           /* Fond sombre */
     border: 2px solid #333;     /* Bordure */
     padding: 30px;
     cursor: pointer;
